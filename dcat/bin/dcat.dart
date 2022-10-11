@@ -1,3 +1,4 @@
+// sudo cp /workspace/Mobile_Application_Development/dcat/bin/dcat.exe /usr/bin/cat
 import 'dart:convert';
 import 'dart:io';
 import 'package:args/args.dart';

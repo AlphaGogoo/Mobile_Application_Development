@@ -1,4 +1,4 @@
-
+// sudo cp /workspace/Mobile_Application_Development/rm/bin/rm.exe /usr/bin/rm
 import 'dart:io';
 import 'package:args/args.dart';
 
