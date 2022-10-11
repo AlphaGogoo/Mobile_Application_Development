@@ -11,8 +11,6 @@ void main(List<String> arguments) {
   ArgResults argResults = parser.parse(arguments);
   final paths = argResults.rest;
 
-  
-
   dcat(paths, showLineNumbers: argResults[lineNumber] as bool);
 }
 

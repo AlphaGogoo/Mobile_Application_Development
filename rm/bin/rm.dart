@@ -16,16 +16,25 @@ Future<void> rm(List<String> paths, {bool putInBin = false}) async {
   } else {
     for (final path in paths) {
       File file = new File(path);
-      if(await file.exists()){
+      try {
         var time = new DateTime.now().millisecondsSinceEpoch;
         var fileName = path.split("/").last;
         if(putInBin){
-          await file.rename('/workspace/Mobile_Application_Development/recycleBin/${fileName}');   
+          await file.rename('/workspace/Mobile_Application_Development/recycleBin/${time}_${fileName}');   
         }else{
           await file.delete();
         }
-      }else{
-      } 
+      }catch(e){
+        _handleError(path);
+      }
     }
+  }
+}
+
+Future<void> _handleError(String path) async {
+  if (await File(path).exists()) {
+    ;
+  } else {
+    stderr.writeln('error: no such file: $path ');
   }
 }
